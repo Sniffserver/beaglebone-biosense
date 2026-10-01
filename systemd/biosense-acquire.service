@@ -1,0 +1,14 @@
+[Unit]
+Description=biosense acquisition (experimental, non-diagnostic)
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/beaglebone-biosense
+Environment=PYTHONPATH=/opt/beaglebone-biosense/src
+ExecStart=/opt/beaglebone-biosense/.venv/bin/python -m biosense.acquire --config /opt/beaglebone-biosense/config/config.toml
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

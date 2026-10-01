@@ -1,0 +1,13 @@
+[adc]
+i2c_bus = 4          # VERIFY with i2cdetect -l
+address = 0x48
+channel = 0          # AIN0 vs GND
+gain = 1             # +-4.096 V
+sample_rate = 250    # SPS
+
+[storage]
+output_dir = "data"
+segment_seconds = 60
+
+[quality]
+max_jitter_ms = 4.0
